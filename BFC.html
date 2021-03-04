@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="father">
+        <style>
+            #father {
+                background-color: lightblue;
+                overflow: hidden;
+            }
+            #father .child {
+                background-color: pink;
+                margin: 15px auto 20px;
+            }
+        </style>
+        <div class="child">第一个div</div>
+        <div style="overflow:hidden">
+            <div class="child">这是第二个div</div>
+        </div>
+    </section>
+    <br />
+    
+    <section id="father1">
+        <style>
+            #father1 {
+                background-color: pink;
+            }
+            #father1 .child {
+                font-size: 58px;
+                float: left;
+            }
+        </style>
+        <div class="child">浮动效果：</div>
+        <div style="overflow: hidden">
+            <div class="child">这是一个浮动元素</div>
+        </div>
+    </section>
+
+    <br />
+
+    <section id="father2">
+        <style>
+            #father2 {
+                background-color: lightblue;
+            }
+            #father2 .left {
+                background-color: pink;
+                width: 100px;
+                height: 100px;
+                float: left;
+            }
+            #father2 .right {
+                background-color: #ccc;
+                height: 130px;
+            }
+        </style>
+        <div class="left"></div>
+        <!-- <div class="right"></div> -->
+        <div style="overflow: hidden">
+            <div class="right"></div>
+        </div>
+
+    </section>
+
+    
+</body>
+</html>
