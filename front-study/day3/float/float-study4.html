@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表格布局三栏解决方案</title>
+  </head>
+  <body>
+    <section class="layout table">
+      <style>
+        .layout.table .left-center-right {
+          width: 100%;
+          height: 100px;
+          display: table;
+          table-layout: fixed;
+          white-space: nowrap;
+        }
+        .layout.table .left-center-right > div {
+          display: table-cell;
+        }
+        .layout.table .left {
+          width: 300px;
+          background: #6b98aa;
+          height: 20vh;
+        }
+        .layout.table .center {
+          background: #c5c57e;
+          height: 10vh;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .layout.table .right {
+          width: 300px;
+          background: #7e73af;
+        }
+      </style>
+      <h1>三栏布局</h1>
+      <article class="left-center-right">
+        <div class="left">
+          <h2>左边</h2>
+        </div>
+        <div class="center">
+          <h2>表格布局解决方案</h2>
+          表格布局解决方案表格布局解决方案表格布局解决方案布局解决方案
+          表格布局解决方案表格布局解决方案表格布局解决方案布局解决方案
+          表格布局解决方案表格布局解决方案表格布局解决方案布局解决方案
+          表格布局解决方案表格布局解决方案表格布局解决方案布局解决方案
+          表格布局解决方案表格布局解决方案表格布局解决方案布局解决方案
+        </div>
+        <div class="right">
+          <h2>右边</h2>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

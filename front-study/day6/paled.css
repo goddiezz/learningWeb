@@ -1,0 +1,74 @@
+img {
+    width: 220px;
+    height: 220px;
+}
+
+/* ⾼斯模糊 */
+
+.blur {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+/* 灰度 */
+
+.grayscale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/* 褐⾊ */
+
+.sepia {
+    -webkit-filter: sepia(100%);
+    filter: sepia(100%);
+}
+
+/* 饱和度 */
+
+.saturate {
+    -webkit-filter: saturate(5);
+    filter: saturate(5);
+}
+
+/* ⾊相旋转 */
+
+.hue-rotate {
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+}
+
+/* 反⾊ */
+
+.invert {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+/* 透明度 */
+
+.opacity {
+    -webkit-filter: opacity(0.5);
+    filter: opacity(0.5);
+}
+
+/* 亮度 */
+
+.brightness {
+    -webkit-filter: brightness(2);
+    filter: brightness(2);
+}
+
+/* 对⽐度 */
+
+.contrast {
+    -webkit-filter: contrast(0.5);
+    filter: contrast(0.5);
+}
+
+/* 阴影 */
+
+.drop-shadow {
+    -webkit-filter: drop-shadow(10px 10px 5px #333);
+    filter: drop-shadow(10px 10px 5px #333);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>绝对定位三栏解决方案</title>
+  </head>
+  <body>
+    <section class="layout absolute">
+      <style>
+        .layout.absolute .left-center-right > div {
+          position: absolute;
+        }
+        .layout.absolute .left {
+          left: 0;
+          width: 300px;
+          height: 40vh;
+          background: #6b98aa;
+        }
+        .layout.absolute .center {
+          left: 300px;
+          right: 300px;
+          height: 80vh;
+          background: #c5c57e;
+        }
+        .layout.absolute .right {
+          right: 0;
+          width: 300px;
+          height: 50vh;
+          background: #7e73af;
+        }
+      </style>
+      <h1>三栏布局</h1>
+      <article class="left-center-right">
+        <div class="left">
+          <h2>左边</h2>
+        </div>
+        <div class="center">
+          <h2>绝对定位解决方案</h2>
+          这是三栏布局的绝对定位解决方案 这是三栏布局的绝对定位解决方案
+          这是三栏布局的绝对定位解决方案 这是三栏布局的绝对定位解决方案
+          这是三栏布局的绝对定位解决方案 这是三栏布局的绝对定位解决方案
+          这是三栏布局的绝对定位解决方案 这是三栏布局的绝对定位解决方案
+          这是三栏布局的绝对定位解决方案 这是三栏布局的绝对定位解决方案
+          这是三栏布局的绝对定位解决方案 这是三栏布局的绝对定位解决方案
+        </div>
+        <div class="right">
+          <h2>右边</h2>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

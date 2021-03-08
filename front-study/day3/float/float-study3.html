@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex布局三栏解决方案</title>
+  </head>
+  <body>
+    <section class="layout flexbox">
+      <style>
+        .layout.flexbox {
+          margin-top: 20px;
+        }
+        .layout.flexbox .left-center-right {
+          display: flex;
+        }
+        /* 左边300px，剩下的宽度由中间和右边各占一份：flex：1 */
+        .layout.flexbox .left {
+          width: 300px;
+          background: #6b98aa;
+          height: 100px;
+
+        }
+        /* 中间区域的高度设置，会把左右都拉伸，如何实现左中右不登高？ */
+        .layout.flexbox .center {
+          flex: 1;
+          height: 60vh;
+          background: #c5c57e;
+          height: 400px;
+        }
+        .layout.flexbox .right {
+          flex: 1;
+          height: 100px;
+          background: #7e73af;
+        }
+      </style>
+      <h1>三栏布局</h1>
+      <article class="left-center-right">
+        <div class="left">
+          <h2>左边</h2>
+        </div>
+        <div class="center">
+          <h2>flexbox解决方案</h2>
+          <p>
+            flexbox解决方案flexbox解决方案flexbox解决方案flexbox解决方案
+            flexbox解决方案flexbox解决方案flexbox解决方案flexbox解决方案
+            flexbox解决方案flexbox解决方案flexbox解决方案flexbox解决方案
+            flexbox解决方案flexbox解决方案flexbox解决方案flexbox解决方案
+          </p>
+        </div>
+        <div class="right">
+          <h2>右边</h2>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
