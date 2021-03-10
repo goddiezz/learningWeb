@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            width: 110vw;
+            margin: 0 auto;
+            background-color: #2a6288;
+            padding: 10px;
+            /* 制定高度 */
+            /* height: 220px; */
+
+            /* ⽗级div定义 overflow:hidden */
+            /* overflow: hidden; */
+
+            /* ⽗级div定义 overflow:auto */
+            /* overflow: auto; */
+        }
+
+        .outer .inner {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(91, 212, 206);
+            margin: 10px;
+            float: left;
+            margin: 10px;
+
+            /* 4.设置position父元素高度又坍塌了 */
+            /* position: absolute; */
+        }
+        /* 加入空div标签 */
+        /* .clear {
+            clear: both;
+        } */
+
+        /* ⽗级div定义 伪类:after 和 zoom */
+        /* .clearfix {
+            zoom: 1;
+        }
+        .clearfix:after {
+            display: block;
+            clear: both;
+            content: "";
+            visibility: hidden;
+            height: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- ⽗级div定义 伪类:after 和 zoom -->
+    <!-- <div class="outer clearfix"> -->
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <div class="inner"></div>
+        <!-- 加入空div标签 -->
+        <!-- <div class="clear"></div> -->
+    </div>
+</body>
+
+</html>
