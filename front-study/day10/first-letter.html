@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>守护你是我最后的希望，束缚着的是思念，丢弃的是无奈，最后我会留下一个圈摆放你我的回忆，直到我也干枯，你也远去。守护你是我最后的希望，束缚着的是思念，丢弃的是无奈，最后我会留下一个圈摆放你我的回忆，直到我也干枯，你也远去。</p>
+    <div class="single-line box shadow">我是单⾏⽂本溢出显示省略号略号</div>
+    <div class="multiple-line box">
+        我是多⾏⽂本溢出显示省略号我是多⾏⽂本溢出显示省略号
+    </div>
+    <div class="flex">
+        <div class="corner"></div>
+        <div class="corner2"></div>
+        <div class="corner3"></div>
+    </div>
+    <div class="mask" data-title="遮罩条">
+        <img src="../images/eqbf.png">
+    </div>
+    <style>
+        p {
+            width: 20vw;
+        }
+
+        p::first-letter {
+            color: #b38552;
+            float: left;
+            font-size: 5em;
+            margin: 0 .2em 0 0;
+            width: 200px;
+        }
+
+        .box {
+            width: 200px;
+        }
+
+        .single-line {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .multiple-line {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+
+        ::selection {
+            background: #009a61;
+            color: #fff;
+            text-shadow: 0 1px hsl(216, 28%, 65%),
+                0 2px hsl(216, 28%, 65%),
+                0 3px hsl(216, 28%, 65%),
+                0 4px hsl(216, 28%, 65%),
+                0 5px hsl(216, 28%, 65%),
+                0 5px 10px black;
+        }
+
+        ::-moz-selection {
+            background: #009a61;
+            color: #fff;
+            text-shadow: 0 1px hsl(216, 28%, 65%),
+                0 2px hsl(216, 28%, 65%),
+                0 3px hsl(216, 28%, 65%),
+                0 4px hsl(216, 28%, 65%),
+                0 5px hsl(216, 28%, 65%),
+                0 5px 10px black;
+        }
+
+        ::-webkit-selection {
+            background: #009a61;
+            color: #fff;
+            text-shadow: ，0 1px hsl(216, 28%, 65%),
+                0 2px hsl(216, 28%, 65%),
+                0 3px hsl(216, 28%, 65%),
+                0 4px hsl(216, 28%, 65%),
+                0 5px hsl(216, 28%, 65%),
+                0 5px 10px black;
+        }
+
+        /* 切⻆样式 */
+        .flex {
+            display: flex;
+        }
+
+        .flex div {
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        /* 单个切⻆ */
+        .corner {
+            background: linear-gradient(-45deg, transparent 15px,
+                    #5588aa 0);
+        }
+
+        /* 多个切⻆ */
+        .corner2 {
+            background: linear-gradient(135deg, transparent 15px,
+                    #5588aa 0) top left,
+                linear-gradient(-135deg, transparent 15px, #5588aa 0) top right, linear-gradient(-45deg, transparent 15px,
+                    #5588aa 0) bottom right,
+                linear-gradient(45deg, transparent 15px, #5588aa 0) bottom left;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        /* 弧形切⻆ */
+        .corner3 {
+            background: radial-gradient(circle at top left,
+                    transparent 15px, #58a 0) top left,
+                radial-gradient(circle at top right, transparent 15px,
+                    #5588aa 0) top right,
+                radial-gradient(circle at bottom right, transparent 15px, #5588aa 0) bottom right,
+                radial-gradient(circle at bottom left, transparent 15px, #5588aa 0) bottom left;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        /* 遮罩条，⼀定要设置position的值，不能为默认static */
+        .mask {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .mask img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 伪类选择器 */
+        .mask:after {
+            content: attr(data-title);
+            position: absolute;
+            width: 100%;
+            /* 这⾥的100%很重要 */
+            top: 100%;
+            left: 0;
+            padding: 0.7em 0;
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            /* 淡⼊淡出动画效果 */
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        /* ⿏标悬停 */
+        .mask:hover:after {
+            opacity: 1;
+            -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+        }
+    </style>
+
+</body>
+
+</html>
