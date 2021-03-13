@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 生成带id的标签 -->
+    <!-- div#box -->
+    <div id="box"></div>
+    <!-- 生成带class的标签 -->
+    <!-- div.container -->
+    <div class="container"></div>
+    <!-- 生成子代结点：> -->
+    <!-- div.header>ul.nav>li.nav-item>p.box -->
+    <div class="header">
+        <ul class="nav">
+            <li class="nav-item">
+                <p class="box"></p>
+            </li>
+        </ul>
+    </div>
+    <!-- 生成兄弟结点: + -->
+    <!-- div+p+ul+li -->
+    <div></div>
+    <p></p>
+    <ul></ul>
+    <li></li>
+    <!-- 生成父代结点：^ -->
+    <!-- div>p>h1^h2 -->
+    <div>
+        <p>
+        <h1></h1>
+        </p>
+        <h2></h2>
+    </div>
+    <!-- 重复元素.任何元素后面加上*n就会被重复n次 -->
+    <!-- ul>li.item*3 -->
+    <ul>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>
+    <!-- 生成分组：() -->
+    <!-- div>(header>ul>(li>a)*2)+footer>p -->
+    <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+    <!-- 设置属性:[] -->
+    <!-- a[href=”https://www.baidu.com” title=”百度一下，你就知道”] -->
+    <a href="”https://www.baidu.com”" title="”百度一下，你就知道”"></a>
+    <!-- 对生成内容编号:$ -->
+    <!-- ul>li#item$*5 -->
+    <ul>
+        <li id="item1"></li>
+        <li id="item2"></li>
+        <li id="item3"></li>
+        <li id="item4"></li>
+        <li id="item5"></li>
+    </ul>
+    <!-- 从大到小可以在$后加@－ -->
+    <!-- ul>li#item$@-*5 -->
+    <ul>
+        <li id="item5"></li>
+        <li id="item4"></li>
+        <li id="item3"></li>
+        <li id="item2"></li>
+        <li id="item1"></li>
+    </ul>
+    <!-- 从指定序号3开始 ，生成5个 -->
+    <!-- ul>li.item$@3*5 -->
+    <ul>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+        <li class="item6"></li>
+        <li class="item7"></li>
+    </ul>
+    <!-- 生成文本内容:{} -->
+    <!-- ul#id>li.classname{生成文本内容}*5 -->
+    <ul id="id">
+        <li class="classname">生成文本内容</li>
+        <li class="classname">生成文本内容</li>
+        <li class="classname">生成文本内容</li>
+        <li class="classname">生成文本内容</li>
+        <li class="classname">生成文本内容</li>
+    </ul>
+    <!-- 生成随机文本 -->
+    <!-- p.content>lorem -->
+    <p class="content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam beatae debitis ipsa sequi modi,
+        earum iste, animi porro ipsam voluptatem saepe cumque quaerat nisi dolorem voluptas sapiente magnam sit
+        voluptates.</p>
+</body>
+
+</html>
