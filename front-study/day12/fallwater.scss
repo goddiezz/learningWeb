@@ -1,0 +1,49 @@
+//定义总的item数量，和pug对应
+$count: 32;
+
+// ⽣成随机数的函数
+@function randomNum($max, $min: 0, $u: 1) {
+    @return ($min + random($max)) * $u;
+}
+
+// 使⽤R、G、B值⽣成随机颜⾊的函数
+@function randomColor() {
+    @return rgb(randomNum(255), randomNum(255),
+        randomNum(255));
+}
+
+// ⽗容器，⼀⾏四列，其他为间距
+.g-container {
+    column-count: 4;
+    column-gap: 0.5vw;
+    padding-top: 0.5vw;
+}
+
+// ⼦元素，注意break-inside属性为avoid表示元素连续前后不断开，取值auto为断开
+.g-item {
+    position: relative;
+    width: 24vw;
+    margin-bottom: 1vw;
+    break-inside: avoid;
+}
+
+// 循环遍历，定义i为循环变量（从1开始）
+@for $i from 1 to $count+1 {
+
+    // 对于class为 g-item的每个元素，调⽤随机数函数⽣成50——300px范围的⾼度，调⽤随机颜⾊函数作为背景⾊
+    .g-item:nth-child(#{$i}) {
+        height: #{randomNum(300, 50)}px;
+        background: randomColor();
+
+        // scss中 & 表示当前元素，这⾥使⽤伪元素将i作为内容显示出来，只要使⽤伪类和伪元素，必然⽗相⼦绝
+        &::after {
+            content: '#{$i}';
+            position: absolute;
+            color: #fff;
+            font-size: 2vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
