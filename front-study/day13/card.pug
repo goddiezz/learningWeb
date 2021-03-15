@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./card.css")
+        title pug综合练习
+    body
+        #app
+            div(v-for="student in students" :key="student.id").card
+                .header
+                    img(:src="student.avatar").avatar
+                    h3 {{student.name}}
+                p {{student.hometown}}
+                p {{student.birthday}}
+                p {{student.hobby}}
+                p {{student.signature}}
+                a(:href="student.github") github地址
+            script(type="text/javascript", src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js") 
+            script(type="text/javascript", src="./card.dev.js") 
