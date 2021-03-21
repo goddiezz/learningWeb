@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./card.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./card.css" />
     <title>pug综合练习</title>
   </head>
   <body>
     <div id="app">
       <div class="card" v-for="student in students" :key="student.id">
-        <div class="header"><img class="avatar" :src="student.avatar">
+        <div class="header">
+          <img class="avatar" :src="student.avatar" />
           <h3>{{student.name}}</h3>
         </div>
         <p>{{student.hometown}}</p>
         <p>{{student.birthday}}</p>
         <p>{{student.hobby}}</p>
-        <p>{{student.signature}}</p><a :href="student.github">github地址</a>
+        <p>{{student.signature}}</p>
+        <a :href="student.github">github地址</a>
       </div>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
-      <script type="text/javascript" src="./card.dev.js"> </script>
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"
+      ></script>
+      <script type="text/javascript" src="./card.dev.js"></script>
     </div>
   </body>
 </html>
