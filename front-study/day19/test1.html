@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="print('name')">获取地址栏参数,判断浏览器</button>
+      <button @click="getMobile">手机</button>
+      <br />
+      <input
+        type="text"
+        onkeyup="clearNoFloat(this)"
+      />JS允许输⼊⼩数，只能是数字，如果是其他字符，则会替换掉
+      <br />
+      <input
+        type="text"
+        onkeyup="clearNoInt(this)"
+      />⽂本框输⼊⾮数字会被清除替换
+      <!-- <button @click="print("></button> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {},
+        methods: {
+          getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            console.log(window.location);
+            if (r != null) {
+              return unescape(r[2]);
+            } else {
+              return null;
+            }
+          },
+          getMobile() {
+            console.log(BrowserInfo);
+          },
+          print(name) {
+            console.log(this.getUrlParam("name"));
+            console.log(getOs());
+          },
+        },
+      });
+    </script>
+    <script>
+      function clearNoFloat(curObj) {
+        curObj.value = curObj.value.replace(/[^\d.]/g, ""); //清除“数字”和“.”以外的字符
+        curObj.value = curObj.value.replace(/^\./g, ""); //验证第⼀个字符是数字⽽不是.
+        curObj.value = curObj.value.replace(/\.{2,}/g, "."); //只保留第⼀个. 清除多余的.
+        curObj.value = curObj.value
+          .replace(".", "$#$")
+          .replace(/\./g, "")
+          .replace("$#$", ".");
+      }
+      /**
+       * JS限制只能是整数，不能是⼩数
+       * @param curObj
+       */
+      function clearNoInt(curObj) {
+        curObj.value = curObj.value.replace(/[^\d]/g, ""); //清除“数字”和“.”以外的字符
+      }
+      function getOs() {
+        if (navigator.userAgent.indexOf("MSIE 8.0") > 0) {
+          return "MSIE8";
+        } else if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+          return "MSIE6";
+        } else if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
+          return "MSIE7";
+        } else if ((isFirefox = navigator.userAgent.indexOf("Firefox") > 0)) {
+          return "Firefox";
+        }
+        if (navigator.userAgent.indexOf("Chrome") > 0) {
+          return "Chrome";
+        } else {
+          return "Other";
+        }
+      }
+      var BrowserInfo = {
+        userAgent: navigator.userAgent.toLowerCase(),
+        isAndroid: Boolean(navigator.userAgent.match(/android/gi)),
+        isIphone: Boolean(navigator.userAgent.match(/iphone|ipod/gi)),
+        isIpad: Boolean(navigator.userAgent.match(/ipad/gi)),
+        isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/gi)),
+
+        isChrome: Boolean(navigator.userAgent.match(/chrome/gi)),
+      };
+    </script>
+  </body>
+</html>
